@@ -179,7 +179,7 @@ def main():
     show_json_response(response)
 
     print("Get all network objects and expect to see \"web_server_1\" and \"file_server_3\".\n**")
-    response = requests.get(networkobjects_url>, headers=headers, verify=False)
+    response = requests.get(networkobjects_url, headers=headers, verify=False)
     show_json_response(response)
 
     print("End Q8.\n**")
