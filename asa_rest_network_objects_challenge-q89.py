@@ -114,7 +114,7 @@ def main():
         "name": "file_server_2"
     }
 
-    response = requests.put(networkobjects_url+"/file_server_1", data=json.dumps(file_server_2_put), headers=headers, verify=False)
+    response = requests.put(networkobjects_url+"/file_server_1", data=json.dumps(<REPLACE for Q6>), headers=headers, verify=False)
     show_json_response(response)
 
     print("Get the \"file_server_2\" network object.\n**")
@@ -137,74 +137,74 @@ def main():
 
     print("Start Q8.\n**")
         
-    ## print("Bulk create web_server_1 and file_server_3 network objects.\n**")
+    print("Bulk create web_server_1 and file_server_3 network objects.\n**")
 
-    ## # See https://asa/doc/#feature/bulk
-    ## bulk_url = "https://asa/api"
+    # See https://asa/doc/#feature/bulk
+    bulk_url = "https://asa/api"
     
-    ## file_server_3_payload = {
-    ##     "host": { 
-    ##         "kind": "IPv4Address", 
-    ##         "value": "203.0.113.30" 
-    ##     }, 
-    ##     "kind": "object#NetworkObj", 
-    ##     "name": "file_server_3", 
-    ##     "objectId": "<REPLACE for Q8>" 
-    ## } 
+    file_server_3_payload = {
+        "host": { 
+            "kind": "IPv4Address", 
+            "value": "203.0.113.30" 
+        }, 
+        "kind": "object#NetworkObj", 
+        "name": "file_server_3", 
+        "objectId": "file_server_3" 
+    } 
     
-    ## web_server_1_payload = {
-    ##     "host": { 
-    ##         "kind": "IPv4Address", 
-    ##         "value": "203.0.113.40" 
-    ##     }, 
-    ##     "kind": "object#NetworkObj", 
-    ##     "name": "<REPLACE for Q8>", 
-    ##     "objectId": "web_server_1" 
-    ## }
+    web_server_1_payload = {
+        "host": { 
+            "kind": "IPv4Address", 
+            "value": "203.0.113.40" 
+        }, 
+        "kind": "object#NetworkObj", 
+        "name": "web_server_1", 
+        "objectId": "web_server_1" 
+    }
         
-    ## bulk_post_payload = [
-    ##     {
-    ##         "method": "<REPLACE for Q8>",
-    ##         "resourceUri": "/api/objects/networkobjects",
-    ##         "data": file_server_3_payload
-    ##     },
-    ##     {
-    ##         "method": "<REPLACE for Q8>",
-    ##         "resourceUri": "/api/objects/networkobjects",
-    ##         "data": web_server_1_payload
-    ##     }
-    ## ]
+    bulk_post_payload = [
+        {
+            "method": "POST",
+            "resourceUri": "/api/objects/networkobjects",
+            "data": file_server_3_payload
+        },
+        {
+            "method": "POST",
+            "resourceUri": "/api/objects/networkobjects",
+            "data": web_server_1_payload
+        }
+    ]
      
-    ## response = requests.<REPLACE for Q8>(<REPLACE for Q8>, data=json.dumps(<REPLACE for Q8>), headers=headers, verify=False)
-    ## show_json_response(response)
+    response = requests.post(bulk_url, data=json.dumps(bulk_post_payload), headers=headers, verify=False)
+    show_json_response(response)
 
-    ## print("Get all network objects and expect to see \"web_server_1\" and \"file_server_3\".\n**")
-    ## response = requests.<REPLACE for Q8>(<REPLACE for Q8>, headers=headers, verify=False)
-    ## show_json_response(response)
+    print("Get all network objects and expect to see \"web_server_1\" and \"file_server_3\".\n**")
+    response = requests.get(networkobjects_url>, headers=headers, verify=False)
+    show_json_response(response)
 
     print("End Q8.\n**")
 
     print("Start Q9.\n**")
     
-    ## print("Bulk delete file_server_3 and web_server_1 network objects.\n**")
+    print("Bulk delete file_server_3 and web_server_1 network objects.\n**")
     
-    ## bulk_delete_payload = [
-    ##     {
-    ##         "method": "<REPLACE for Q9>",
-    ##         "resourceUri": "/api/objects/networkobjects/file_server_3"
-    ##     },
-    ##     {
-    ##         "method": "<REPLACE for Q9>",
-    ##         "resourceUri": "/api/objects/networkobjects/web_server_1"
-    ##     }
-    ## ]
+    bulk_delete_payload = [
+        {
+            "method": "DELETE",
+            "resourceUri": "/api/objects/networkobjects/file_server_3"
+        },
+        {
+            "method": "DELETE",
+            "resourceUri": "/api/objects/networkobjects/web_server_1"
+        }
+    ]
         
-    ## response = requests.<REPLACE for Q9>(<REPLACE for Q9>, data=json.dumps(<REPLACE for Q9>), headers=headers, verify=False)
-    ## show_json_response(response)
+    response = requests.post(bulk_url, data=json.dumps(bulk_delete_payload), headers=headers, verify=False)
+    show_json_response(response)
 
-    ## print("Get all network objects and expect to see no items.\n**")
-    ## response = requests.<REPLACE for Q9>(<REPLACE for Q9>, headers=headers, verify=False)
-    ## show_json_response(response)
+    print("Get all network objects and expect to see no items.\n**")
+    response = requests.get(networkobjects_url, headers=headers, verify=False)
+    show_json_response(response)
 
     print("End Q9.\n**")
     
