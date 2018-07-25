@@ -40,7 +40,7 @@ payload={
     "output_format": "json"
   }
 }
-response = requests.<Replace for Q1>(url, data=json.dumps(payload), headers=headers, auth=(switchuser, switchpassword)).json()
+response = requests.post(url, data=json.dumps(payload), headers=headers, auth=(switchuser, switchpassword)).json()
 #The following line may be uncommented for debug purposes
 #print(json.dumps(response,sort_keys=True,indent=4, separators=(',', ': ')))
 #Replace the final dictionary key with the apppropriate value for the code representing the results of the operation
