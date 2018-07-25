@@ -44,7 +44,7 @@ response = requests.post(url, data=json.dumps(payload), headers=headers, auth=(s
 #The following line may be uncommented for debug purposes
 #print(json.dumps(response,sort_keys=True,indent=4, separators=(',', ': ')))
 #Replace the final dictionary key with the apppropriate value for the code representing the results of the operation
-print("codes are " + response['ins_api']['outputs']['output'][0]['code'] + " and " + response['ins_api']['outputs']['output'][1]['<Replace for Q1>'])
+print("codes are " + response['ins_api']['outputs']['output'][0]['code'] + " and " + response['ins_api']['outputs']['output'][1]['code'])
 
 #End of code for Q1
 

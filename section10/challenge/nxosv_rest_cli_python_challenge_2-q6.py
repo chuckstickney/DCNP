@@ -46,7 +46,7 @@ response = requests.post(url, data=json.dumps(payload), headers=headers, auth=(s
 #The following line may be uncommented for debug purposes
 #print(json.dumps(response,sort_keys=True,indent=4, separators=(',', ': ')))
 #Replace the final dictionary key with the apppropriate value for the message representing the results of the operation
-print("messages are " + response['ins_api']['outputs']['output'][0]['<Replace for Q3>'] + ", " + response['ins_api']['outputs']['output'][1]['<Replace for Q3>'] + " and " + response['ins_api']['outputs']['output'][2]['<Replace for Q3>'])
+print("messages are " + response['ins_api']['outputs']['output'][0]['msg'] + ", " + response['ins_api']['outputs']['output'][1]['msg'] + " and " + response['ins_api']['outputs']['output'][2]['msg'])
 
 
 #End of code for Q3
@@ -68,6 +68,6 @@ response = requests.post(url,data=json.dumps(payload), headers=headers,auth=(swi
 #The following line may be uncommented for debug purposes
 #print(json.dumps(response,sort_keys=True,indent=4, separators=(',', ': ')))
 #Replace the final dictionary key with the apppropriate value for the best path value.
-print("best is " + response['ins_api']['outputs']['output']['body']['TABLE_vrf']['ROW_vrf']['TABLE_afi']['ROW_afi'][1]['TABLE_safi']['ROW_safi']['TABLE_rd']['ROW_rd']['TABLE_prefix']['ROW_prefix']['TABLE_path']['ROW_path']['<Replace for Q4>'])
+print("best is " + response['ins_api']['outputs']['output']['body']['TABLE_vrf']['ROW_vrf']['TABLE_afi']['ROW_afi'][1]['TABLE_safi']['ROW_safi']['TABLE_rd']['ROW_rd']['TABLE_prefix']['ROW_prefix']['TABLE_path']['ROW_path']['best'])
 
 #End of code for Q4
