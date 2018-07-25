@@ -48,7 +48,7 @@ def main():
     # Get tenant
     print('Get ' + tn_name + '\n**')
     response = requests.get(create_tn_url(tn_name), cookies=cookies, verify=False)
-    Show result
+    # Show result
     show_json_response(response)
         
     # The following block of code to delete the Tenant is for utility purposes as you are working through the code.
@@ -58,7 +58,7 @@ def main():
     # To avoid spurious errors, delete the Tenant first. Note that the code block for Q8 also does this.
     # If there is a tenant 
     if int(json.loads(response.text)['totalCount']) > 0:   
-        Make request to delete tenant
+        # Make request to delete tenant
         print('Delete ' + tn_name + '\n**')
         response = requests.delete(create_tn_url(tn_name), cookies=cookies, verify=False)
         show_json_response(response)
